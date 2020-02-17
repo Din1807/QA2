@@ -22,12 +22,12 @@ public class SecondHomework {
         System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://delfi.lv/");
+        driver.get("http://rus.delfi.lv/");
         WebElement firstTitle = driver.findElement(ARTICLE_TITLE); // <-Find 1 title
-        String firstTitleText = firstTitle.getText().trim(); // <- Save title
+        String firstTitleText = firstTitle.getText(); // <- Save title
         firstTitle.click(); // <- Click on this element
         WebElement articleTitle = driver.findElement(ARTICLE_PAGE_TITLE); // <- Find articles
-        String articleTitleText = articleTitle.getText().trim(); // <- Save article
+        String articleTitleText = articleTitle.getText(); // <- Save article
         Assertions.assertEquals(firstTitleText,articleTitleText, "Wrong title on article page!"); // <- Check
         driver.findElement(ARTICLE_COMMENT_COUNT).click(); // <-Click to comment page
         WebElement CommentTitle = driver.findElement(ARTICLE_COMMENT_TITLE);
