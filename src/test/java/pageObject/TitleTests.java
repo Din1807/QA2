@@ -38,40 +38,6 @@ public class TitleTests {
         LOGGER.info("Number of comment page comments Anon " + regComCount + " and Reg " + anonComCount + " all was: " + (regComCount + anonComCount));
         Assertions.assertEquals(mainPageCommentCount, regComCount + anonComCount, "Wrong count on comment page!");
         baseFunc.closeBrowser();
-
-
-
-
-/*
-
-        int mainPageCommentCount, articleCommentCount, anonCommentCount, regCommentCount;
-        if (!articles.get(articleNum).findElements(MAIN_PAGE_COMMENT_COUNT).isEmpty()) {
-            mainPageCommentCount = Integer.parseInt(articles.get(articleNum).findElement(MAIN_PAGE_COMMENT_COUNT).getText().substring(1, articles.get(articleNum).findElement(MAIN_PAGE_COMMENT_COUNT).getText().length() - 1));
-        } else {
-            mainPageCommentCount = 0;
-        }
-
-        articles.get(articleNum).findElement(ARTICLE_TITLE).click();
-        if (!driver.findElements(ARTICLE_COMMENT_COUNT).isEmpty()) {
-            articleCommentCount = Integer.parseInt(driver.findElement(ARTICLE_COMMENT_COUNT).getText().substring(1, driver.findElement(ARTICLE_COMMENT_COUNT).getText().length() - 1));
-        } else {
-            articleCommentCount = 0;
-        }
-        LOGGER.info("Article page comment count was: " + articleCommentCount);
-
-        if (!driver.findElements(COMMENT_BTN).isEmpty()) {
-            driver.findElement(COMMENT_BTN).click();
-            if (!driver.findElements(ANON_COMMENT_COUNT).isEmpty()) {
-                anonCommentCount = Integer.parseInt(driver.findElement(ANON_COMMENT_COUNT).getText().substring(1, driver.findElement(ANON_COMMENT_COUNT).getText().length() - 1));
-                regCommentCount = Integer.parseInt(driver.findElement(REG_COMMENT_COUNT).getText().substring(1, driver.findElement(REG_COMMENT_COUNT).getText().length() - 1));
-                LOGGER.info("Number of comment page comments Anon " + anonCommentCount + " and Reg " + regCommentCount + " all was: " + (anonCommentCount + regCommentCount));
-                Assertions.assertEquals(mainPageCommentCount, anonCommentCount + regCommentCount - 1, "Wrong count on comment page!");
-            } else {
-                LOGGER.info("Comment page does not exist or locked.");
-            }
-        } else {
-            LOGGER.info("Comment page does not exist.");
-        }*/
     }
 
     public void goToArticleById(){
